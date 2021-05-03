@@ -9,6 +9,10 @@
         airbrakeEnvironment="deploy-preview"
         airbrakeDeployUserName="bharath package"
         airbrakeDeployUserEmail="bharath@gmail.com"
+  [[context.deploy-preview.plugins]]
+    package = "@sentry/netlify-build-plugin"
+
+      [context.deploy-preview.plugins.inputs]
 
 
   

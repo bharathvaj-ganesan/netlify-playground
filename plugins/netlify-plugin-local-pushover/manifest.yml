@@ -1,1 +1,6 @@
 name: netlify-plugin-local-pushover
+inputs:
+    - name: successMessage
+      description: success messgage
+    - name: errorMessage
+      description: error messsage

@@ -1,2 +1,5 @@
 [[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+  
+[[plugins]]
   package = "/plugins/netlify-plugin-local-pushover"

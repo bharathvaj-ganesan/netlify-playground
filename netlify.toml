@@ -1,5 +1,31 @@
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
+# Production context:
+[context.production]
+
+  [[plugins]]
+    package = "@netlify/plugin-functions-install-core"
+
+  [[plugins]]
+    package = "/plugins/netlify-plugin-local-pushover"
+
+      [plugins.inputs]
+        successMessage="Success msg from Production"
+        errorMessage="Error msg from Production"
+
+
+# Deploy Preview context:
+[context.deploy-preview]
+  ACCESS_TOKEN = "not so secret"
+    
+  [[plugins]]
+    package = "@netlify/plugin-functions-install-core"
+    
+  [[plugins]]
+    package = "/plugins/netlify-plugin-local-pushover"
+
+      [plugins.inputs]
+        successMessage="Success msg from deploy preview"
+        errorMessage="Error msg from deploy preview"
+
+
   
-[[plugins]]
-  package = "/plugins/netlify-plugin-local-pushover"
+

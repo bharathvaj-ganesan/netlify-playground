@@ -24,8 +24,9 @@ const pluginFailureHandler = (error, { utils }) =>
 module.exports = {
     async onSuccess(pluginApi) {
         try {
+            const { inputs } = pluginApi;
             precheck();
-            const message = getSuccessMsg();
+            const message = inputs.successMessage || getSuccessMsg();
             console.log('Sending build success message via Pushover');
             await sendPushOverNotification({ message });
         } catch (error) {
@@ -34,8 +35,9 @@ module.exports = {
     },
     async onError(pluginApi) {
         try {
+            const { inputs } = pluginApi;
             precheck();
-            const message = getErrorMsg();
+            const message = inputs.errorMessage || getErrorMsg();
             console.log('Sending build failed message via Pushover');
             await sendPushOverNotification({
                 message,

@@ -1,9 +1,8 @@
 # Production context:
-[context.production]
-
-  [[plugins]]
+[[plugins]]
     package = "@netlify/plugin-functions-install-core"
 
+[context.production]
   [[plugins]]
     package = "/plugins/netlify-plugin-local-pushover"
 
@@ -14,11 +13,6 @@
 
 # Deploy Preview context:
 [context.deploy-preview]
-  ACCESS_TOKEN = "not so secret"
-    
-  [[plugins]]
-    package = "@netlify/plugin-functions-install-core"
-    
   [[plugins]]
     package = "/plugins/netlify-plugin-local-pushover"
 

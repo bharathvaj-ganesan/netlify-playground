@@ -25,9 +25,9 @@
     package = "/plugins/netlify-plugin-airbrake"
 
       [context.deploy-preview.plugins.inputs]
-        airbrakeVersion="v9"
+        airbrakeVersion="v9 remote"
         airbrakeEnvironment="deploy-preview"
-        airbrakeDeployUserName="bharath"
+        airbrakeDeployUserName="bharath remote"
         airbrakeDeployUserEmail="bharath@gmail.com"
 
 

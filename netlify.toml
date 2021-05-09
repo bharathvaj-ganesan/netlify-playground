@@ -1,3 +1,16 @@
+# Production context:
+[context.production]
+
+  [[context.production.plugins]]
+    package = "@bharathvaj/netlify-plugin-airbrake"
+
+      [context.production.plugins.inputs]
+        airbrakeVersion="v1"
+        airbrakeEnvironment="production"
+        airbrakeDeployUserName="john"
+        airbrakeDeployUserEmail="john@smith.com"
+
+
 # Deploy Preview context:
 [context.deploy-preview]
     
@@ -5,10 +18,10 @@
     package = "@bharathvaj/netlify-plugin-airbrake"
 
       [context.deploy-preview.plugins.inputs]
-        airbrakeVersion="v12"
+        airbrakeVersion="v2.beta"
         airbrakeEnvironment="deploy-preview"
-        airbrakeDeployUserName="bharath package"
-        airbrakeDeployUserEmail="bharath@gmail.com"
+        airbrakeDeployUserName="john"
+        airbrakeDeployUserEmail="john@smith.com"
 
 
   

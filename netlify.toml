@@ -1,33 +1,13 @@
-# Production context:
-[context.production]
-
-  [[context.production.plugins]]
-    package = "@netlify/plugin-functions-install-core"
-
-  [[context.production.plugins]]
-    package = "/plugins/netlify-plugin-airbrake"
-
-      [context.production.plugins.inputs]
-        airbrakeVersion="v9 remote"
-        airbrakeEnvironment="production remote"
-        airbrakeDeployUserName="bharath remote"
-        airbrakeDeployUserEmail="bharath@gmail.com"
-
-
 # Deploy Preview context:
 [context.deploy-preview]
-  ACCESS_TOKEN = "not so secret"
     
   [[context.deploy-preview.plugins]]
-    package = "@netlify/plugin-functions-install-core"
-    
-  [[context.deploy-preview.plugins]]
-    package = "/plugins/netlify-plugin-airbrake"
+    package = "@bharathvaj/netlify-plugin-airbrake"
 
       [context.deploy-preview.plugins.inputs]
-        airbrakeVersion="v10"
+        airbrakeVersion="v11"
         airbrakeEnvironment="deploy-preview"
-        airbrakeDeployUserName="bharath remote"
+        airbrakeDeployUserName="bharath package"
         airbrakeDeployUserEmail="bharath@gmail.com"
 
 

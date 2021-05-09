@@ -32,9 +32,9 @@ module.exports = {
         username:
           env.AIRBRAKE_DEPLOY_USER_NAME || inputs.airbrakeDeployUserName,
         email: env.AIRBRAKE_DEPLOY_USER_EMAIL || inputs.airbrakeDeployUserEmail,
-        revision: env.AIRBRAKE_VERSION || inputs.airbrakeVersion,
+        version: env.AIRBRAKE_VERSION || inputs.airbrakeVersion,
+        revision: airbrakeRevision,
         repository: airbrakeRepo,
-        version: airbrakeRevision,
       });
     } catch (error) {
       return utils.build.failPlugin('Failed to create Airbrake Deployment', {

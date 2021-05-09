@@ -1,14 +1,6 @@
 # Deploy Preview context:
 [context.deploy-preview]
-    
-  [[context.deploy-preview.plugins]]
-    package = "@bharathvaj/netlify-plugin-airbrake"
-
-      [context.deploy-preview.plugins.inputs]
-        airbrakeVersion="v11"
-        airbrakeEnvironment="deploy-preview"
-        airbrakeDeployUserName="bharath package"
-        airbrakeDeployUserEmail="bharath@gmail.com"
+  
   [[context.deploy-preview.plugins]]
     package = "@sentry/netlify-build-plugin"
 

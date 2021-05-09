@@ -5,11 +5,13 @@
     package = "@netlify/plugin-functions-install-core"
 
   [[context.production.plugins]]
-    package = "/plugins/netlify-plugin-local-pushover"
+    package = "/plugins/netlify-plugin-airbrake"
 
       [context.production.plugins.inputs]
-        successMessage="Success msg from Production"
-        errorMessage="Error msg from Production"
+        airbrakeVersion="v9"
+        airbrakeEnvironment="production"
+        airbrakeDeployUserName="bharath"
+        airbrakeDeployUserEmail="bharath@gmail.com"
 
 
 # Deploy Preview context:
@@ -20,11 +22,13 @@
     package = "@netlify/plugin-functions-install-core"
     
   [[context.deploy-preview.plugins]]
-    package = "/plugins/netlify-plugin-local-pushover"
+    package = "/plugins/netlify-plugin-airbrake"
 
       [context.deploy-preview.plugins.inputs]
-        successMessage="Success msg from deploy preview"
-        errorMessage="Error msg "
+        airbrakeVersion="v9"
+        airbrakeEnvironment="deploy-preview"
+        airbrakeDeployUserName="bharath"
+        airbrakeDeployUserEmail="bharath@gmail.com"
 
 
   

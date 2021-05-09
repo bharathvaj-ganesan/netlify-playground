@@ -4,11 +4,15 @@ const {
 
 const sendPushOverNotification = require('./pushover-helper');
 
-const getSuccessMsg = () =>
-    `Hi there, we just deployed the site successfully  🎉\n\n👉 ${URL}`;
+const getSuccessMsg = ({ successMessage }) => {
+    const defaultMessage = `Hi there, we just deployed the site successfully  🎉`;
+    return `${successMessage || defaultMessage} \n\n👉 ${URL}`;
+};
 
-const getErrorMsg = () =>
-    `Hi there, Latest build failed 😱\n\nCheck your build's log for more details\n\n👉 ${URL}`;
+const getErrorMsg = ({ errorMessage }) => {
+    const defaultMessage = `Hi there, Latest build failed 😱\n\nCheck your build's log for more details`;
+    return `${errorMessage || defaultMessage} \n\n👉 ${URL}`;
+};
 
 const precheck = () => {
     if (!PUSHOVER_USER_KEY || !PUSHOVER_API_TOKEN) {
@@ -24,9 +28,9 @@ const pluginFailureHandler = (error, { utils }) =>
 module.exports = {
     async onSuccess(pluginApi) {
         try {
-            const { inputs } = pluginApi;
             precheck();
-            const message = inputs.successMessage || getSuccessMsg();
+            const { inputs } = pluginApi;
+            const message = getSuccessMsg(inputs);
             console.log('Sending build success message via Pushover');
             await sendPushOverNotification({ message });
         } catch (error) {
@@ -35,9 +39,9 @@ module.exports = {
     },
     async onError(pluginApi) {
         try {
-            const { inputs } = pluginApi;
             precheck();
-            const message = inputs.errorMessage || getErrorMsg();
+            const { inputs } = pluginApi;
+            const message = getErrorMsg(inputs);
             console.log('Sending build failed message via Pushover');
             await sendPushOverNotification({
                 message,

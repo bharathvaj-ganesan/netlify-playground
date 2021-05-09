@@ -8,9 +8,9 @@
     package = "/plugins/netlify-plugin-airbrake"
 
       [context.production.plugins.inputs]
-        airbrakeVersion="v9"
-        airbrakeEnvironment="production"
-        airbrakeDeployUserName="bharath"
+        airbrakeVersion="v9 remote"
+        airbrakeEnvironment="production remote"
+        airbrakeDeployUserName="bharath remote"
         airbrakeDeployUserEmail="bharath@gmail.com"
 
 

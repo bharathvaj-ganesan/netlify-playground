@@ -5,7 +5,7 @@
     package = "@bharathvaj/netlify-plugin-airbrake"
 
       [context.deploy-preview.plugins.inputs]
-        airbrakeVersion="v11"
+        airbrakeVersion="v12"
         airbrakeEnvironment="deploy-preview"
         airbrakeDeployUserName="bharath package"
         airbrakeDeployUserEmail="bharath@gmail.com"
